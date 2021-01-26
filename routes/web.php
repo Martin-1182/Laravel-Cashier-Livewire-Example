@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/contact', [ContactFormController::class, 'sendForm']
+)->name('send-form');
+
+
+

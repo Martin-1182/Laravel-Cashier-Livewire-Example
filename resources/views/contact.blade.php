@@ -13,17 +13,17 @@
 
                         <div class="my-1 px-1 w-1/2 overflow-hidden sm:w-full lg:w-1/2">
                             <h1 class="text-3xl">{{ __('Contact Page') }}</h1>
-                            <div class="p-4">
+                            <div class="p-8">
                                 <h2 class="pb-4 text-xl">Lorem ipsum, dolor sit.</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laboriosam autem
                                     tempora quod soluta. Consequatur, at a. Autem quo, repudiandae commodi dolor
-                                    consequuntur quam ipsum cupiditate ratione quis ex amet natus aliquam asperiores
+                                    consequuntur quam ipsum cupiditate <strong>ratione quis ex amet</strong>  natus aliquam asperiores
                                     quas explicabo cumque magnam. Aut, quos iusto?
                                 </p>
-                                <p class="bg-gray-900 p-4 text-white mt-2 rounded-lg">
+                                <p class="bg-gray-900 p-4 text-white mt-2 rounded-lg shadow-xl">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur enim doloribus
-                                    non illum distinctio repellat, corporis rem, delectus eos et minima, quidem quas
+                                    non <strong>illum distinctio repellat, corporis rem, delectus eos</strong> et minima, quidem quas
                                     quod animi voluptas aliquam maxime at natus vero iste? Neque tempora necessitatibus
                                     omnis labore assumenda illo corrupti?
                                 </p>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="my-1 px-1 w-1/2 overflow-hidden sm:w-full lg:w-1/2">
-                            <form action="" method="POST">
+                            <form action="{{ route('send-form') }}" method="post">
                                 @csrf
                                 <div>
                                     <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -53,21 +53,21 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <x-jet-label for="tel" value="{{ __('Phone') }}" />
-                                    <x-jet-input id="tel" class="block mt-1 w-full" type="tel" name="tel"
-                                        :value="old('tel')" required />
+                                    <x-jet-label for="phone" value="{{ __('Phone') }}" />
+                                    <x-jet-input id="phone" class="block mt-1 w-full" type="tel" name="phone"
+                                        :value="old('phone')" required />
                                 </div>
 
                                 <div class="mt-4">
                                     <x-jet-label for="message" value="{{ __('Message') }}" />
                                     <textarea
                                         class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                                        name="" id="" rows="8"></textarea>
+                                        name="message" id="message" rows="8"></textarea>
                                 </div>
 
                                 <div class="flex items-center justify-end mt-4">
                                     <x-jet-button class="ml-4">
-                                        {{ __('Register') }}
+                                        {{ __('Send') }}
                                     </x-jet-button>
                                 </div>
                             </form>
